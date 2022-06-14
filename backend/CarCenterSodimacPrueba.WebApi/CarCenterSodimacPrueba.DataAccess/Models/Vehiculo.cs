@@ -13,10 +13,10 @@ namespace CarCenterSodimacPrueba.DataAccess.Models
         public int IdVehiculo { get; set; }
         public string? Placa { get; set; }
         public string? Marca { get; set; }
-        public byte? Modelo { get; set; }
+        public int? Modelo { get; set; }
         public string? Color { get; set; }
         public int? IdCliente { get; set; }
-        public bool? StatusVehiculo { get; set; }
+        public int? StatusVehiculo { get; set; }
         public DateTime? FechaRegistro { get; set; }
 
         public virtual Cliente? IdClienteNavigation { get; set; }

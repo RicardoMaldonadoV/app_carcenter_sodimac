@@ -21,7 +21,7 @@ namespace CarCenterSodimacPrueba.WebApi.Controllers
             return await _context.Clientes.ToListAsync();
         }
 
-        [HttpGet("{doc}")]
+        [HttpGet("porDocCliente")]
         public async Task<ActionResult<Cliente>> BuscarClientePorDoc(string doc)
         {
             var rta = await _context.Clientes.FirstOrDefaultAsync(x => x.Documento == doc);
@@ -80,10 +80,10 @@ namespace CarCenterSodimacPrueba.WebApi.Controllers
             }        
         }
 
-        [HttpDelete("{doc}")]
-        public async Task<ActionResult<bool>> BorrarCliente(string doc)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<bool>> BorrarCliente(int id)
         {
-            Cliente cl = await _context.Clientes.FirstOrDefaultAsync(x => x.Documento == doc);
+            Cliente cl = await _context.Clientes.FirstOrDefaultAsync(x => x.IdCliente == id);
             if (cl == null)
                 return NotFound();
 
