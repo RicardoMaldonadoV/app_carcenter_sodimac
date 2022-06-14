@@ -1,3 +1,4 @@
+--Sin secuencias para un ambiente controlado de pruebas 
 INSERT ALL 
    INTO tipo_doc VALUES(1,'CC','Cedula de ciudadanía', SYSDATE)
    INTO tipo_doc VALUES(2,'CE','Cedula de extrangería', SYSDATE)

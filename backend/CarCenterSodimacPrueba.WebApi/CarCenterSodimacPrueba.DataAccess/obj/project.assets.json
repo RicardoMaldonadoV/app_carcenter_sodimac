@@ -1300,11 +1300,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricar\\OneDrive\\Documentos\\Pruebas - Sodimac\\Desarrollador base\\App\\backend\\CarCenterSodimacPrueba.WebApi\\CarCenterSodimacPrueba.DataAccess\\CarCenterSodimacPrueba.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\ricar\\OneDrive\\Documentos\\Pruebas - Sodimac\\Desarrollador base\\app_carcenter_sodimac\\backend\\CarCenterSodimacPrueba.WebApi\\CarCenterSodimacPrueba.DataAccess\\CarCenterSodimacPrueba.DataAccess.csproj",
       "projectName": "CarCenterSodimacPrueba.DataAccess",
-      "projectPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\Pruebas - Sodimac\\Desarrollador base\\App\\backend\\CarCenterSodimacPrueba.WebApi\\CarCenterSodimacPrueba.DataAccess\\CarCenterSodimacPrueba.DataAccess.csproj",
+      "projectPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\Pruebas - Sodimac\\Desarrollador base\\app_carcenter_sodimac\\backend\\CarCenterSodimacPrueba.WebApi\\CarCenterSodimacPrueba.DataAccess\\CarCenterSodimacPrueba.DataAccess.csproj",
       "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\Pruebas - Sodimac\\Desarrollador base\\App\\backend\\CarCenterSodimacPrueba.WebApi\\CarCenterSodimacPrueba.DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\Pruebas - Sodimac\\Desarrollador base\\app_carcenter_sodimac\\backend\\CarCenterSodimacPrueba.WebApi\\CarCenterSodimacPrueba.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",

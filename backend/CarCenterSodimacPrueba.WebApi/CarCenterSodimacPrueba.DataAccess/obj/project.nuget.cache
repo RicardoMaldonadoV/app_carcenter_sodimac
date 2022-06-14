@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4/kG/SAMIn1FkW7Yhyapyuk2xxQVXuT+0c0KN8XAnJMOnC1E1gMVh9mpBCQqMUaOMoVZK+Sk22bjOaFJxFRExg==",
+  "dgSpecHash": "Q5nUt0egumDk8qbqY9tKFwFFX3R8l2AjSl199GSBHQWo69YXbjd2RU4Xz/5lFVs1N82tZG2mB1LF/mo5bbd45Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ricar\\OneDrive\\Documentos\\Pruebas - Sodimac\\Desarrollador base\\App\\backend\\CarCenterSodimacPrueba.WebApi\\CarCenterSodimacPrueba.DataAccess\\CarCenterSodimacPrueba.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\ricar\\OneDrive\\Documentos\\Pruebas - Sodimac\\Desarrollador base\\app_carcenter_sodimac\\backend\\CarCenterSodimacPrueba.WebApi\\CarCenterSodimacPrueba.DataAccess\\CarCenterSodimacPrueba.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ricar\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "C:\\Users\\ricar\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
