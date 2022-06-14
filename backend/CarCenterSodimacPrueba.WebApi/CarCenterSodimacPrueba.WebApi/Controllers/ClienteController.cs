@@ -21,10 +21,10 @@ namespace CarCenterSodimacPrueba.WebApi.Controllers
             return await _context.Clientes.ToListAsync();
         }
 
-        [HttpGet("porDocCliente")]
-        public async Task<ActionResult<Cliente>> BuscarClientePorDoc(string doc)
+        [HttpGet("porDocMailCliente")]
+        public async Task<ActionResult<Cliente>> BuscarClientePorDoc(string doc, string mail)
         {
-            var rta = await _context.Clientes.FirstOrDefaultAsync(x => x.Documento == doc);
+            var rta = await _context.Clientes.FirstOrDefaultAsync(x => x.Documento == doc && x.Correo == mail);
 
             if (rta != null)
                 return rta;
