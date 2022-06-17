@@ -28,5 +28,10 @@ body {
 .text_welcome {
     color: #ebebebc4;
     text-align: center;
-    margin: 2rem;
+    margin: 2rem auto;
+    padding-top: 2rem;
+}
+.tb-mant {
+    overflow: auto;
+    display: block;
 }

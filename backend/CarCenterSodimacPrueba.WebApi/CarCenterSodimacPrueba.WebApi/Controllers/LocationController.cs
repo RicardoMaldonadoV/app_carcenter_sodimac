@@ -20,16 +20,18 @@ namespace CarCenterSodimacPrueba.WebApi.Controllers
         {
             return await _context.Departamentos.ToListAsync();
         }
-        [HttpGet("Ciudades")]
-        public async Task<List<Ciudad>> ListarCiudades()
+        [HttpGet("CiudadesPorDpto")]
+        public async Task<List<Ciudad>> ListarCiudadesPorDpto(short id_departamento)
         {
-            return await _context.Ciudads.ToListAsync();
+            return await _context.Ciudads.Where(x => x.IdDepartamento == id_departamento).ToListAsync();
         }
-        [HttpGet("Barrios")]
-        public async Task<List<Barrio>> ListarBarrios()
+
+        [HttpGet("BarriosPorCiudad")]
+        public async Task<List<Barrio>> ListarBarrios(int id_ciudad)
         {
-            return await _context.Barrios.ToListAsync();
+            return await _context.Barrios.Where(x => x.IdCiudad == id_ciudad).ToListAsync();
         }
+
         [HttpGet("Tiendas")]
         public async Task<List<Tiendum>> ListarTiendas()
         {

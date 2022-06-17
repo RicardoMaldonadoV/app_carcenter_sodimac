@@ -15,7 +15,7 @@ namespace CarCenterSodimacPrueba.DataAccess.Models
         public string? SNombre { get; set; }
         public string? PApellido { get; set; }
         public string? SApellido { get; set; }
-        public byte? IdTipoDoc { get; set; }
+        public short? IdTipoDoc { get; set; }
         public string? Documento { get; set; }
         public long? Celular { get; set; }
         public string? Correo { get; set; }

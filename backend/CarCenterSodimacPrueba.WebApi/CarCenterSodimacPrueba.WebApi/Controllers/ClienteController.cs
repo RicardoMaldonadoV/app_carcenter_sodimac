@@ -21,10 +21,16 @@ namespace CarCenterSodimacPrueba.WebApi.Controllers
             return await _context.Clientes.ToListAsync();
         }
 
+        [HttpGet("tipo_doc")]
+        public async Task<List<TipoDoc>> ListarTipoDoc()
+        {
+            return await _context.TipoDocs.ToListAsync();
+        }
+
         [HttpGet("porDocMailCliente")]
         public async Task<ActionResult<Cliente>> BuscarClientePorDoc(string doc, string mail)
         {
-            var rta = await _context.Clientes.FirstOrDefaultAsync(x => x.Documento == doc && x.Correo == mail);
+            var rta = await _context.Clientes.FirstOrDefaultAsync(x => x.Documento == doc && x.Correo.ToLower() == mail.ToLower());
 
             if (rta != null)
                 return rta;
@@ -53,22 +59,24 @@ namespace CarCenterSodimacPrueba.WebApi.Controllers
             if (cliente == null || cliente.IdCliente == 0)
                 return BadRequest("faltan datos");
             
-            Cliente cl = await _context.Clientes.FirstOrDefaultAsync(x => x.Documento == cliente.Documento);
+            Cliente cl = await _context.Clientes.FirstOrDefaultAsync(x => x.IdCliente == cliente.IdCliente);
             if (cl == null)
                 return NotFound();
 
             try
             {
-                cl.Celular = cliente.Celular;
-                cl.Direccion = cliente.Direccion;
-                cl.Correo = cliente.Correo;
-                cl.IdBarrio = cliente.IdBarrio;
-                cl.IdCiudad = cliente.IdCiudad;
-                cl.IdDepartamento = cliente.IdDepartamento;
                 cl.PNombre = cliente.PNombre;
                 cl.SNombre = cliente.SNombre;
                 cl.PApellido = cliente.PApellido;
-                cl.SApellido = cliente.SApellido;  
+                cl.SApellido = cliente.SApellido;
+                cl.IdTipoDoc = cliente.IdTipoDoc; 
+                cl.Documento = cliente.Documento;
+                cl.Celular = cliente.Celular;
+                cl.Correo = cliente.Correo;
+                cl.Direccion = cliente.Direccion;
+                cl.IdDepartamento = cliente.IdDepartamento;
+                cl.IdCiudad = cliente.IdCiudad;
+                cl.IdBarrio = cliente.IdBarrio;
                 _context.Clientes.Update(cl);
                 await _context.SaveChangesAsync();
                 return cl;

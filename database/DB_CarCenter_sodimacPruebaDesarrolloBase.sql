@@ -208,14 +208,33 @@ GRANT ALL PRIVILEGES TO DEVBASE;
 GRANT EXECUTE ANY PROCEDURE TO DEVBASE;
 GRANT UNLIMITED TABLESPACE TO DEVBASE;
 GRANT CONNECT, RESOURCE TO DEVBASE;
--- --SECUENCIAS
--- CREATE SEQUENCE nombreTabla_seq START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
--- -- TRIGGER SECUENCIA
--- CREATE OR REPLACE TRIGGER al_insertar_nombreTabla BEFORE INSERT ON nombreTabla FOR EACH ROW
--- BEGIN 
---    SELECT nombreTabla.NEXTVAL INTO :NEW.id_nombreTabla FROM dual;
--- END;
--- /
+
+-- Secuencias para el id cliente
+CREATE SEQUENCE cliente_seq START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
+-- Trigger secuencia cliente
+CREATE OR REPLACE TRIGGER al_insertar_cliente BEFORE INSERT ON cliente FOR EACH ROW
+BEGIN 
+   SELECT cliente_seq.NEXTVAL INTO :NEW.id_cliente FROM dual;
+END;
+/
+-- Secuencias para el id mantenimiento
+CREATE SEQUENCE mantenimiento_seq START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
+-- Trigger secuencia mantenimiento
+CREATE OR REPLACE TRIGGER al_insertar_mantenimiento BEFORE INSERT ON mantenimiento FOR EACH ROW
+BEGIN 
+   SELECT mantenimiento_seq.NEXTVAL INTO :NEW.id_mantenimiento FROM dual;
+END;
+/
+-- Secuencias para el id vehiculo
+CREATE SEQUENCE vehiculo_seq START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
+-- Trigger fecha registro carro y id vehiculo
+CREATE OR REPLACE TRIGGER al_insertar_vehiculo BEFORE INSERT ON vehiculo FOR EACH ROW
+BEGIN 
+   SELECT SYSDATE INTO :NEW.fecha_registro FROM dual;
+   SELECT vehiculo_seq.NEXTVAL INTO :NEW.id_vehiculo FROM dual;
+END;
+/
+
 -- DROP TABLE tipo_doc CASCADE CONSTRAINTS;
 -- DROP TABLE departamento CASCADE CONSTRAINTS;
 -- DROP TABLE ciudad CASCADE CONSTRAINTS;

@@ -22,16 +22,12 @@ namespace CarCenterSodimacPrueba.WebApi.Controllers
         }
 
         [HttpGet("porDocCliente")]
-        public async Task<ActionResult<Mantenimiento>> BuscarMantenimientoDocCliente(string doc)
+        public async Task<List<Mantenimiento>> ListarMantenimientoDocCliente(string doc)
         {
-            var rta = await _context.Mantenimientos.FirstOrDefaultAsync(x => x.IdClienteNavigation.Documento == doc);
-
-            if (rta != null)
-                return rta;
-            else
-                return NotFound();
-
+            return await _context.Mantenimientos.Where(x => x.IdClienteNavigation.Documento == doc).OrderBy(x=> x.IdMantenimiento).ToListAsync();
         }
+
+
         [HttpPost]
         public async Task<ActionResult<Mantenimiento>> CrearMantenimiento(Mantenimiento mantenimiento)
         {

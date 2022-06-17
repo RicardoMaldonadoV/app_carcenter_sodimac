@@ -11,7 +11,7 @@ namespace CarCenterSodimacPrueba.DataAccess.Models
             Mecanicos = new HashSet<Mecanico>();
         }
 
-        public byte IdTipoDoc { get; set; }
+        public short IdTipoDoc { get; set; }
         public string? TipoDoc1 { get; set; }
         public string? DescTipoDoc { get; set; }
         public DateTime? FechaCrea { get; set; }

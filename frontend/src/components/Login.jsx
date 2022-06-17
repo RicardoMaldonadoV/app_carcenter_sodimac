@@ -14,28 +14,39 @@ const Login = () => {
   //Instanció request - modulo para las consulta a la Api
   const { validaCliente } = clienteRequest();
   //Creo la función que valida el acceso del cliente
-  const acceso = async e => {
-    if(mail != "" && doc != "")
-    {
+  const acceso = async (e) => {
+    if (mail != "" && doc != "") {
       e.preventDefault();
-      validaCliente(mail.toLowerCase(),doc)
-      .then((response) => {
-        return response.data;
-      })
-      .then((response) => {
-        console.log(response);
-        const lengthResponse = Object.keys(response).length;
-        if (lengthResponse > 0) {
+      validaCliente(mail, doc)
+        .then((response) => {
+          return response.data;
+        })
+        .then((response) => {
+          // console.log(response);
+          const lengthResponse = Object.keys(response).length;
+          if (lengthResponse > 0) {
+            cookies.set("o_cliente", response, { path: "/" });
+            window.location.href = "/menu/";
           } else throw new SyntaxError("cliente no registrado"); //Genero error por que no retornó nada
-      })
-      .catch(err => {
-        console.log(err);
-        alert("Credenciales no validas, intente nuevamente o registrese para tener acceso a la aplicación"); 
-      });
+        })
+        .catch((err) => {
+          console.log(err);
+          alert(
+            "Credenciales no validas, intente nuevamente o registrese para tener acceso a la aplicación"
+          );
+        });
     }
   };
-
-
+  //Metodo para activar el Modal de Registro
+  const showmodalRegister = () => {
+    document.getElementById("register-modal").style.display = "block";
+  };
+  //Cierro modal
+  window.onclick = function (event) {
+    if (event.target == document.getElementById("register-modal")) {
+      document.getElementById("register-modal").style.display = "none";
+    }
+  };
   return (
     <div className="card text-center container" id="LoginForm">
       <div className="card-body">
@@ -58,7 +69,7 @@ const Login = () => {
             <input
               type="number"
               className="form-control"
-              placeholder="Cédula"
+              placeholder="CC/CE/NIT"
               name="doc"
               required
               onChange={(event) => {
@@ -69,24 +80,22 @@ const Login = () => {
           <div className="col-sm d-grid gap-2">
             <button
               type="summit"
-              className="btn btn-success btn-sm "
-               onClick={acceso}
+              className="btn btn-success btn-sm"
+              onClick={acceso}
             >
               Ingresar
             </button>
             <button
               type="button"
-              className="btn btn-primary btn-sm "
-              data-bs-toggle="modal"
-              data-bs-target="#registerModal"
+              className="btn btn-primary btn-sm"
+              onClick={showmodalRegister}
             >
               Registrate aquí
             </button>
           </div>
         </form>
         <p className="card-text">
-          Para solicitar un servicio debe ingresar su correo y Nro de cédula o
-          Nit, si no se encuentra registrado, por favor registrese dando clic en
+          Para solicitar un servicio debe ingresar su correo y Nro de documento, si no se encuentra registrado, por favor registrese dando clic en
           el botón "Registrate aquí".
         </p>
       </div>
